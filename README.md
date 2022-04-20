@@ -1,14 +1,16 @@
 # gif-maker
-Convert a sequence of images to an animated GIF image!
+Convert a sequence of images to an animated GIF image from the command line!
 
 # Installation
-Install the dependencies for the library with
+A python3 installation is required to use the package. You can install the package and its dependencies with
 ```
-pip install -r requirements.txt
+pip install -e .
 ```
 
 # Usage
 To generate an animated GIF, simply run
 ```
-python gif_maker.py path/to/input0.png [path/to/input1.png path/to/input2.png ...] path/to/output.gif
+gifmaker path/to/input0.png [path/to/input1.png path/to/input2.png ...] path/to/output.gif
 ```
+
+Images will be assembled in the order in which they are passed to the script.

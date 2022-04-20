@@ -24,7 +24,7 @@ def _build_arg_parser():
     return p
 
 
-def main():
+def __gifmaker__():
     parser = _build_arg_parser()
     args = parser.parse_args()
 
@@ -48,7 +48,3 @@ def main():
     images[0].save(args.output, save_all=True,
                    append_images=images[1:],
                    duration=args.frame_delay, loop=loops)
-
-
-if __name__ == '__main__':
-    main()
