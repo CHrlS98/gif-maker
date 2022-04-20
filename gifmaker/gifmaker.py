@@ -1,7 +1,7 @@
 """
 Create a gif from a series of images.
 
-Images will be assembled in the order they are given.
+Images will be appended in the order in which they are passed to the script.
 """
 from PIL import Image
 import argparse
