@@ -4,7 +4,8 @@ Create a gif from a series of images.
 Images will be appended in the order in which they are passed to the script.
 """
 from PIL import Image
-import argparse
+import numpy as np
+import argparse 
 import os
 
 
@@ -39,8 +40,10 @@ def __gifmaker__():
     images = []
     for fname in args.input:
         if os.path.exists(fname):
-            i = Image.open(fname)
-            images.append(i)
+            # load image data in RAM to avoid
+            # TOO MANY OPENED IMAGES error
+            pixels = np.asarray(Image.open(fname))
+            images.append(Image.fromarray(pixels))
         else:
             parser.error('Invalid image file: {}'.format(fname))
 
